@@ -9,7 +9,16 @@ const initialState = {
     todos: [],
 
     refresh: false,
+
+
+    filter: { title: "", userId: ""},
+
+    currentPage:1,
     
+    itemsPerPage:10,
+    
+    totalDePaginas:0
+      
 
 }
 const todoSlice = createSlice({
@@ -20,7 +29,7 @@ const todoSlice = createSlice({
 
     reducers: {
 
-        setTodo: (state, action) => {
+        setTodos: (state, action) => {
 
             state.todos = action.payload
 
@@ -48,11 +57,32 @@ const todoSlice = createSlice({
         // state.formulari = action.payload
 
         // },
+
+        setFilter: (state,action) => {
+
+            state.filter = action.payload
+            
+        },
+       
+        setPaginaActual: (state,action) => {
+
+            state.currentPage = action.payload
+            
+        },
+        setElementosPorPagina: (state,action) => {
+
+            state.itemsPerPage = action.payload
+            
+        },setTotalDePaginas: (state,action) => {
+
+            state.totalDePaginas = action.payload
+            
+        },
    
     }
 
 });
 
-export const { setIsLoading,setTodo,setError,setRefresh } = todoSlice.actions;
+export const {setItems,setPaginaActual, setElementosPorPagina,setTotalDePaginas,setIsLoading,setTodos,setError,setRefresh,setFet, setPage, setPages,setFilter } = todoSlice.actions;
 
 export default todoSlice.reducer

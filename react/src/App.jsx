@@ -5,7 +5,6 @@ import { Routes, Route } from "react-router-dom";
 import Login from './Login';
 import TodosList from './TodosList'
 import TodosAdd from './TodosAdd'
-import Todos from './Todos'
 
 import { UserContext } from "./UserContext";
 import Header from './Header';
